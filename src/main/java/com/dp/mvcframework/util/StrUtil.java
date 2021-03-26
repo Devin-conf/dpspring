@@ -1,4 +1,4 @@
-package com.dp.mvcframework.utill;
+package com.dp.mvcframework.util;
 
 /**
  * @auther: liudaping

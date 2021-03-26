@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import static com.dp.mvcframework.utill.StrUtil.toLowFirstCase;
+import static com.dp.mvcframework.util.StrUtil.toLowFirstCase;
 
 /**
  * @auther: liudaping
