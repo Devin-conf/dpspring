@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com"
->
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
-    <classpath>
-        <dir name="/Users/liudap/Documents/project/springdemo/dpspring/target/dp--spring/WEB-INF/classes">
-            <include name="webdefault.xml"/>
-            <include name="application.properties"/>
-        </dir>
-        <dir name="/Users/liudap/Documents/project/springdemo/dpspring/target/dp--spring/WEB-INF/classes">
-            <include name="webdefault.xml"/>
-            <include name="application.properties"/>
-        </dir>
-        <dir name="/Users/liudap/Documents/project/springdemo/dpspring/src/main/resources">
-            <include name="**/*"/>
-        </dir>
-        <dir name="/Users/liudap/Documents/project/springdemo/dpspring/src/main/java">
-            <exclude name="**/*.java"/>
-            <exclude name="**/*.class"/>
-        </dir>
-        <dir name="/Users/liudap/Documents/project/springdemo/dpspring/target/classes">
-        </dir>
-    </classpath>
+	<classpath>
+		<dir name="/Users/liudap/Documents/source/dpspring/target/dp-spring/WEB-INF/classes">
+			<include name="webdefault.xml"/>
+			<include name="application.properties"/>
+		</dir>
+		<dir name="/Users/liudap/Documents/source/dpspring/target/dp-spring/WEB-INF/classes">
+			<include name="webdefault.xml"/>
+			<include name="application.properties"/>
+		</dir>
+		<dir name="/Users/liudap/Documents/source/dpspring/src/main/resources">
+			<include name="**/*"/>
+		</dir>
+		<dir name="/Users/liudap/Documents/source/dpspring/src/main/java">
+			<exclude name="**/*.java"/>
+			<exclude name="**/*.class"/>
+		</dir>
+		<dir name="/Users/liudap/Documents/source/dpspring/target/classes">
+		</dir>
+	</classpath>
 
-    <web>
-        <link target="/">
-            <dir name="/Users/liudap/Documents/project/springdemo/dpspring/src/main/webapp">
-            </dir>
-        </link>
-    </web>
+	<web>
+		<link target="/">
+			<dir name="/Users/liudap/Documents/source/dpspring/src/main/webapp">
+			</dir>
+		</link>
+	</web>
 
 </application>
