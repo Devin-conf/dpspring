@@ -14,6 +14,11 @@ public class DPBeanDefinition {
     //bean对应的classname
     private String beanNameClassName;
 
+    public DPBeanDefinition(String factoryBeanName, String beanNameClassName) {
+        this.factoryBeanName = factoryBeanName;
+        this.beanNameClassName = beanNameClassName;
+    }
+
     public String getFactoryBeanName() {
         return factoryBeanName;
     }

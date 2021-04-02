@@ -1,7 +1,6 @@
 # dpspring
-手写spring简单框架
 
-beans
+
 ```
 ApplicationContext 简单料理界工厂类 getBean() 从ioc容器中回去一个实例的方法
 大流程如下
@@ -16,10 +15,6 @@ ApplicationContext 简单料理界工厂类 getBean() 从ioc容器中回去一�
 5.完成di
 6.handlermapping
 ```
-
-
-
-
 
 
 

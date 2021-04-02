@@ -13,7 +13,7 @@ public class DPBeanWapper {
     private Class<?> wapperClass;
 
 
-    public DPBeanWapper(Object instance){
+    public DPBeanWapper(Object instance) {
         this.wapperClass = instance.getClass();
         this.wapperInstance = instance;
     }

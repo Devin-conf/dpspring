@@ -1,7 +1,7 @@
 package com.dp.mvcframework.beans.support;
 
-import com.google.common.collect.Lists;
 import com.dp.mvcframework.beans.config.DPBeanDefinition;
+import com.google.common.collect.Lists;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.Properties;
+
+import static com.dp.mvcframework.util.StrUtil.toLowFirstCase;
 
 /**
  * @auther: liudaping
@@ -21,6 +23,8 @@ public class DPBeanDefinitionReader {
     private String[] configLocations;
 
     private Properties contextConfig = new Properties();
+
+
 
     //保存扫描的结果
     private List<String> registryBeanClasses = Lists.newArrayList();
@@ -44,26 +48,34 @@ public class DPBeanDefinitionReader {
             for (String className: registryBeanClasses) {
 
                 Class<?> beanClass = Class.forName(className);
+                //如果是接口的话  就不添加， 因为下面有一个 单独处理接口注入
+                if(beanClass.isInterface()){continue;}
+
                 //保存类 对应的classname
                 //还有beanname 1. 默认类名首字母小写 2 自定义  3 接口
-                String beanName = "";
-                String beanClassName = "";
-                result.add(doCreateBeandefinition(beanName, beanClassName));
+                String beanName = beanClass.getSimpleName();
+                String beanClassName = beanClass.getName();
 
+                //单独处理 如果是接口的话， beanName = 接口名字  beanclassname 是 实现类的名字
+                result.add(doCreateBeandefinition(toLowFirstCase(beanName), beanClassName));
+
+                //完成接口注入
+                for (Class clazz : beanClass.getInterfaces()){
+                    result.add(doCreateBeandefinition(toLowFirstCase(clazz.getName()), beanClass.getName()));
+
+                }
 
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return result;
     }
 
 
     private DPBeanDefinition doCreateBeandefinition(String beanName, String beanClassName) {
-
-
-        return null;
+        return new DPBeanDefinition(beanName, beanClassName);
 
     }
 
@@ -105,5 +117,9 @@ public class DPBeanDefinitionReader {
             }
 
         }
+    }
+
+    public Properties getConfig(){
+        return this.contextConfig;
     }
 }

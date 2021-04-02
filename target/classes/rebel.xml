@@ -3,10 +3,16 @@
 
 	<classpath>
 		<dir name="/Users/liudap/Documents/source/dpspring/target/dp-spring/WEB-INF/classes">
+			<include name="layouts/500.html"/>
+			<include name="layouts/404.html"/>
+			<include name="layouts/first.html"/>
 			<include name="webdefault.xml"/>
 			<include name="application.properties"/>
 		</dir>
 		<dir name="/Users/liudap/Documents/source/dpspring/target/dp-spring/WEB-INF/classes">
+			<include name="layouts/500.html"/>
+			<include name="layouts/404.html"/>
+			<include name="layouts/first.html"/>
 			<include name="webdefault.xml"/>
 			<include name="application.properties"/>
 		</dir>
